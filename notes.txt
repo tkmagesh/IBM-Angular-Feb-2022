@@ -1,0 +1,25 @@
+Magesh Kuppan
+
+Schedule:
+    Commence    : 9:30 AM
+    Tea Break   : 11:00 AM (20 mins)
+    Lunch Break : 1:00 PM  (1 Hour)
+    Tea Break   : 3:30 PM (20 mins)
+    Windup      : 5:30 PM
+
+Methodology:
+    NO powerpoint
+    100% Hands on driven
+    Atleast 50% of the participants should have completed the assignments for us to move forward.
+
+Software Requirements
+    1. Node.js (LTS)
+    2. Visual Studio Code
+    3. Chrome Browser
+
+About You
+    Name
+    Experience
+    Primary Skillset
+    Experience in Angular (if any)
+    
