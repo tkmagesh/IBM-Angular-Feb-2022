@@ -34,3 +34,5 @@ Salary Calculator
         2. Preparing the app for deployment is taken care by another team
             i.e., refactoring the JS & CSS to their respective files
                   minifying and uglifying the JS & CSS files
+
+Reactive X Proactive
