@@ -22,4 +22,8 @@ About You
     Experience
     Primary Skillset
     Experience in Angular (if any)
-    
+
+What is Angular?
+
+Salary Calculator
+    salary = basic + hra + da - tax(%)
