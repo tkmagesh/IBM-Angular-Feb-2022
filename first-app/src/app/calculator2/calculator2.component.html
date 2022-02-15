@@ -1,0 +1,31 @@
+<!-- 
+<h3>Calculator-2</h3>
+<input type="number" #num1 (change)="n1 = num1.valueAsNumber">
+<select #operation (change)="op = operation.value">
+    <option value="">----Select----</option>
+    <option value="add">Add</option>
+    <option value="subtract">Subtract</option>
+    <option value="multiply">Multiply</option>
+    <option value="divide">Divide</option>
+</select>
+<input type="number" #num2 (change)="n2 = num2.valueAsNumber">
+<input type="button" value="Calculate" (click)="onCalculateClick()">
+<div>{{result}}</div> 
+-->
+
+
+<h3>Calculator-2</h3>
+<input type="number" (change)="n1 = $any($event.target).valueAsNumber">
+<select  (change)="op = $any($event.target).value">
+    <option value="">----Select----</option>
+    <option value="add">Add</option>
+    <option value="subtract">Subtract</option>
+    <option value="multiply">Multiply</option>
+    <option value="divide">Divide</option>
+</select>
+<input type="number"  (change)="n2 = $any($event.target).valueAsNumber">
+<input type="button" value="Calculate" (click)="onCalculateClick()">
+<div>{{result}}</div> 
+
+
+

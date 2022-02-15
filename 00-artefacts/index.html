@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy</title>
+    <script>
+        function onBtnDummyClick(evt){
+            console.dir(evt)
+            console.log('Dummy button clicked')
+        }
+        function init(){
+            var btnDummy = document.getElementById('btnDummy');
+            btnDummy.addEventListener('click', onBtnDummyClick);
+        }
+        window.addEventListener('DOMContentLoaded', init)
+
+    </script>
+</head>
+<body>
+    <input type="button" value="Dummy" id="btnDummy">
+</body>
+</html>

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
 import { Calculator1Component } from './calculator1/calculator1.component';
+import { Calculator2Component } from './calculator2/calculator2.component';
 
 /*  
   declartions : => components, pipes, directives
@@ -16,7 +17,8 @@ import { Calculator1Component } from './calculator1/calculator1.component';
   declarations: [
     AppComponent,
     GreeterComponent,
-    Calculator1Component
+    Calculator1Component,
+    Calculator2Component
   ],
   imports: [
     BrowserModule
