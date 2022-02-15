@@ -25,7 +25,7 @@
 </select>
 <input type="number"  (change)="n2 = $any($event.target).valueAsNumber">
 <input type="button" value="Calculate" (click)="onCalculateClick()">
-<div>{{result}}</div> 
+<div [ngClass]="{positive : result >= 0, negative : result < 0}">{{result}}</div> 
 
 
 
