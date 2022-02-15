@@ -13,4 +13,12 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onAddNewClick(newProductName : string){
+    this.productNames.push(newProductName);
+  }
+
+  onRemoveClick(idx : number){
+    this.productNames.splice(idx, 1)
+  }
+
 }
