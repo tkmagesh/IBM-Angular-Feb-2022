@@ -36,3 +36,99 @@ Salary Calculator
                   minifying and uglifying the JS & CSS files
 
 Reactive X Proactive
+
+Angular Building Blocks
+    1. Module
+        Registry of application entities (components, directives, pipes, services, etc.)
+        Dependency Injection
+        There has to be a minimum of 1 module in an angular application
+        Application initialization happens in the main module
+
+    2. Component
+        Represents one of the UI responsibilities
+        Encapsulation of Presentation & UI Behavior (user actions)
+        Application UI = composition of components
+
+    3. Directive
+        Encapsulation of DOM manipulation logic
+        Directive = Component - Template
+
+    4. Pipe
+        Encapsulation of Data Transformation logic for presentation
+        
+    5. Service
+        NON UI responsibilities
+
+
+Angular cli
+    Installation - 
+        [sudo] npm install -g @angular/cli
+
+To Create a new application
+    ng new <app-name>
+    
+
+ES6 (ES2015)
+    1. let
+    2. const
+    3. Array destructuring
+    4. Rest operator (array)
+    5. Spread operator (array)
+    6. Object destructuring
+    7. Rest operator (Object)
+    8. Spread operator (Object)
+    9. default parameters
+    10. arrow functions
+    11. template strings
+    12. iterables (for of)
+    13. classes
+    14. modules
+
+    For other features => http://es6-features.org
+
+TypeScript
+    JavaScript + TypeSafety
+
+
+var x : number = 10
+
+function add(x : number,y : number) : number {
+    return x + y;
+}
+
+add('abc','xyz')
+var result : string = add(10,20)
+
+    |
+    |
+    V
+typescript compiler
+    |
+    |
+    V
+var x  = 10
+
+function add(x ,y )  {
+    return x + y;
+}
+
+1. Access modifiers
+    public
+    private
+    protected
+2. Enum
+3. Interfaces
+4. Generics
+
+http://www.typescriptlang.org
+
+
+JavaScript Module Systems
+    AMD (Asynchronous Module Definition)
+    CommonJS (CommonJS Module System)
+
+
+    ES6 Modules
+        Anything defined in a file (js/ts) is considered 'private' by default
+        If any entity has to be accessed publicly, then it has to be explicitly exported
+        If any public entity from another file has to be used, then it has to be imported explicitly
