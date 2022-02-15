@@ -1,0 +1,53 @@
+<style>
+    body {
+        margin-left: 50px;
+    }
+
+    .field {
+        margin-bottom: 10px;
+    }
+
+    label {
+        display: block;
+    }
+
+    td {
+        font-size: 18pt;
+        padding-right: 10px;
+    }
+</style>
+<h3>Salary Calculator</h3>
+<section>
+    <div class="field">
+        <label for="">Basic :</label>
+        <input type="number" name="" id="txtBasic">
+    </div>
+    <div class="field">
+        <label for="">HRA :</label>
+        <input type="number" name="" id="txtHra">
+    </div>
+    <div class="field">
+        <label for="">DA :</label>
+        <input type="number" name="" id="txtDa">
+    </div>
+    <div class="field">
+        <label for="">Tax :</label>
+        <input type="range" name="" id="rangeTax" min="0" max="30" value="0">
+    </div>
+    <div class="field">
+        <input type="button" value="Calculate" id="btnCalculate">
+    </div>
+    <div class="field">
+        <table>
+            <tbody>
+                <tr>
+                    <td id="tdBasic">[basic]</td>
+                    <td id="tdHra">[hra]</td>
+                    <td id="tdDa">[da]</td>
+                    <td id="tdTax">[tax]</td>
+                    <td id="tdSalary">[salary]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
