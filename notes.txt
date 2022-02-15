@@ -119,6 +119,7 @@ function add(x ,y )  {
 2. Enum
 3. Interfaces
 4. Generics
+5. Decorators
 
 http://www.typescriptlang.org
 
@@ -132,3 +133,20 @@ JavaScript Module Systems
         Anything defined in a file (js/ts) is considered 'private' by default
         If any entity has to be accessed publicly, then it has to be explicitly exported
         If any public entity from another file has to be used, then it has to be imported explicitly
+
+
+Angular Decorator
+    NgModule
+    Component
+    Pipe
+    Directive
+
+    Injectable
+    Inject
+    Input
+    Output
+
+To create a component
+    ng generate component <component_name>
+    OR
+    ng g c <component_name>
