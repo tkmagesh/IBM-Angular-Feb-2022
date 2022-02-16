@@ -180,3 +180,19 @@ Dependencies should NOT be 'created' and 'used' in the same entitiy
 
 Creating a new pipe
     ng g p bugs/pipes/trim-text
+
+window.localStorage
+===================
+    * key/value store
+    * key has to be unique
+    * key & value must be strings 
+        Use JSON.stringify() & JSON.parse() for serialization and deserialization
+    * ~10 MB storage limit
+    * security is taken care by Same Origin Policy
+    * APIS
+        - setItem(key,value)
+        - getItem(key) => value
+        - removeItem(key)
+        - key(index) => key @ index
+        - clear()
+        - length => # of items in the storage

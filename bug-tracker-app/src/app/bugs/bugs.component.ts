@@ -16,6 +16,7 @@ export class BugsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    //load the bugs from the storage
   }
 
   onAddNewClick(newBugName : string){
