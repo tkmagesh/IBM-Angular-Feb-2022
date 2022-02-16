@@ -196,3 +196,10 @@ window.localStorage
         - key(index) => key @ index
         - clear()
         - length => # of items in the storage
+
+To Study
+    Array Methods
+        - filter()
+        - map()
+        - reduce()
+        - forEach()
