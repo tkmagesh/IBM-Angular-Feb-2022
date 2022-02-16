@@ -8,3 +8,5 @@
         <input type="button" value=" X " (click)="onRemoveClick(i)" />
     </li>
 </ul>
+<div *ngIf="productNames.length <= 0; else productsCount">No products to display!</div>
+<ng-template #productsCount>[{{productNames.length}}] product(s) are listed!</ng-template>
