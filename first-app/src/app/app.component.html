@@ -1,13 +1,25 @@
 <h1>{{ title }}</h1>
 <div>
-    <input type="button" value="Products">
-    <input type="button" value="Salary Calculator">
-    <input type="button" value="Greeter">
-    <input type="button" value="Calculator-1">
-    <input type="button" value="Calculator-2">
+    <input type="button" value="Products" (click)="userChoice = $any($event.target).value">
+    <input type="button" value="Salary Calculator" (click)="userChoice = $any($event.target).value">
+    <input type="button" value="Greeter" (click)="userChoice = $any($event.target).value">
+    <input type="button" value="Calculator-1" (click)="userChoice = $any($event.target).value">
+    <input type="button" value="Calculator-2" (click)="userChoice = $any($event.target).value">
 </div>
-<app-products></app-products>
-<app-salary-calculator></app-salary-calculator>
-<app-greeter></app-greeter> <!-- Greeter as the child component of the app component -->
-<app-calculator1></app-calculator1>
-<app-calculator2></app-calculator2>
+
+<!-- 
+<app-products *ngIf="userChoice==='Products'"></app-products>
+<app-salary-calculator *ngIf="userChoice==='Salary Calculator'"></app-salary-calculator>
+<app-greeter *ngIf="userChoice==='Greeter'"></app-greeter> 
+<app-calculator1 *ngIf="userChoice==='Calculator-1'"></app-calculator1>
+<app-calculator2 *ngIf="userChoice==='Calculator-2'"></app-calculator2> 
+-->
+
+<div [ngSwitch]="userChoice">
+    <app-products *ngSwitchCase="'Products'"></app-products>
+    <app-salary-calculator *ngSwitchCase="'Salary Calculator'"></app-salary-calculator>
+    <app-greeter *ngSwitchCase="'Greeter'"></app-greeter>
+    <app-calculator1 *ngSwitchCase="'Calculator-1'"></app-calculator1>
+    <app-calculator2 *ngSwitchCase="'Calculator-2'"></app-calculator2>
+    <div *ngSwitchDefault>Select your choice!</div>
+</div>
