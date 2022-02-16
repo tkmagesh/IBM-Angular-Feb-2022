@@ -160,3 +160,20 @@ Directive
     Structural Directive
         Manipulate the structure of the DOM tree (by adding new dom nodes or removing existing dom nodes)
         Syntax = *<directive_name>
+
+
+Books
+    Agile Principles Patterns & Practices
+    Head First Design Patterns
+    Refactoring
+    Refactoring to Patterns
+    Growing Object-Oriented software guided by tests
+
+SOLID
+    SRP - Single Responsibility Principle
+    OCP - Open Closed Principle
+    LSP - Liskov's Substitution Principle
+    ISP - Interface Seggregation Princile
+    DIP - Dependency Inversion Principle
+
+Dependencies should NOT be 'created' and 'used' in the same entitiy
