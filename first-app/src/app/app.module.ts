@@ -9,6 +9,7 @@ import { ProductsComponent } from './products/products.component';
 import { SalaryCalculatorComponent } from './salary-calculator/salary-calculator.component';
 import { SalaryCalculatorModel } from './salary-calculator/salary-calculator-model';
 import { SalaryCalculatorModelV2 } from './salary-calculator/salary-calculator-modelV2';
+import { CalculatorResultComponent } from './calculator-result/calculator-result.component';
 
 /*  
   declartions : => components, pipes, directives
@@ -24,7 +25,8 @@ import { SalaryCalculatorModelV2 } from './salary-calculator/salary-calculator-m
     Calculator1Component,
     Calculator2Component,
     ProductsComponent,
-    SalaryCalculatorComponent
+    SalaryCalculatorComponent,
+    CalculatorResultComponent
   ],
   imports: [
     BrowserModule
