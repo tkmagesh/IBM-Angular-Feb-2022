@@ -177,3 +177,6 @@ SOLID
     DIP - Dependency Inversion Principle
 
 Dependencies should NOT be 'created' and 'used' in the same entitiy
+
+Creating a new pipe
+    ng g p bugs/pipes/trim-text
