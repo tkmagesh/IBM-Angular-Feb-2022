@@ -13,11 +13,13 @@ import { SalaryCalculatorModel } from './salary-calculator-model';
 export class SalaryCalculatorComponent implements OnInit {
 
  
-  /* public model : SalaryCalculatorModel ;
+  /* 
+  public model : SalaryCalculatorModel ;
 
   constructor(model : SalaryCalculatorModel) {
     this.model = model;
-  }  */
+  }  
+  */
  
 
   constructor(public model : SalaryCalculatorModel){

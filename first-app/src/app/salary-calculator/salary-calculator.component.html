@@ -1,4 +1,5 @@
 <h3>Salary Calculator</h3>
+{{model | json}}
 <section>
     <div class="field">
         <label for="">Basic :</label>
@@ -27,7 +28,7 @@
                     <td>{{model.hra}}</td>
                     <td>{{model.da}}</td>
                     <td>{{model.tax}}</td>
-                    <td>{{model.salary}}</td>
+                    <td>{{ model.salary | currency:'INR' }}</td>
                 </tr>
             </tbody>
         </table>
