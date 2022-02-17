@@ -12,7 +12,7 @@ export class BugsComponent implements OnInit {
   bugs : Bug[] = [];
 
   bugSortAttr : string = '';
-  
+  bugSortDesc : boolean = false;
 
   constructor(private bugOperations : BugOperationsService) { }
 

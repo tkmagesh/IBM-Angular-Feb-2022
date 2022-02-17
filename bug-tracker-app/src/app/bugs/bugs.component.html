@@ -12,7 +12,7 @@
         <option value="createdAt">Created</option>
     </select>
     <label for="">Descending ? :</label>
-    <input type="checkbox" name="" id="">
+    <input type="checkbox" (change)="bugSortDesc = $any($event.target).checked">
 </section>
 <section class="edit">
     <label for="">Bug Name :</label>
@@ -21,7 +21,7 @@
 </section>
 <section class="list">
     <ol>
-        <li *ngFor="let bug of (bugs|sort:bugSortAttr) ">
+        <li *ngFor="let bug of (bugs|sort:bugSortAttr:bugSortDesc) ">
             <span 
                 class="bugname"
                 (click)="onBugNameClick(bug)"

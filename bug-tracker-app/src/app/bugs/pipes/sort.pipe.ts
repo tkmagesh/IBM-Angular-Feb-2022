@@ -15,7 +15,13 @@ export class SortPipe<T> implements PipeTransform{
         }
     }
 
-    transform(list: T[], attrName : keyof(T)) {
+    private getDescComparer<T>(comparer : Comparer<T>) : Comparer<T>{
+        return (x : T, y : T ) : number => {
+            return comparer(x,y) * -1;
+        }
+    }
+
+    transform(list: T[], attrName : keyof(T), isDesc : boolean = false) {
        /*  switch (attrName){
             case 'id':
                return list.sort(this.getComparer('id'))
@@ -28,7 +34,11 @@ export class SortPipe<T> implements PipeTransform{
             default:
                 return list;
         } */
-        return list.sort(this.getComparer(attrName));
+        let comparer = this.getComparer(attrName)
+        if (isDesc){
+            comparer = this.getDescComparer(comparer);
+        }
+        return list.sort(comparer);
         
     }
 
