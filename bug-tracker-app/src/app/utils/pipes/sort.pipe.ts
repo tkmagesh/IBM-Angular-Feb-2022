@@ -23,7 +23,6 @@ export class SortPipe<T> implements PipeTransform{
     }
 
     transform(list: T[], attrName : keyof(T), isDesc : boolean = false) {
-        console.log('sort.transform triggered', list, attrName, isDesc)
        /*  switch (attrName){
             case 'id':
                return list.sort(this.getComparer('id'))

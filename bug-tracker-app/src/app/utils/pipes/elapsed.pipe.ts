@@ -6,7 +6,6 @@ import * as moment from 'moment'
 })
 export class ElapsedPipe implements PipeTransform{
     transform(value: any, ...args: any[]) {
-        console.log('elapsed.transform triggered')
         return moment(value).fromNow();
     }
 
