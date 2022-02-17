@@ -51,14 +51,13 @@ export class BugsComponent implements OnInit {
     }); 
     */
 
-    //this.bugs = this.bugs.filter(bug => !bug.isClosed);
+    
     this.bugs
       .filter(bug => bug.isClosed)
       .forEach((closedBug,idx) => {
         this.bugOperations.remove(closedBug);
-        this.bugs.splice(idx, 1)
       })
-
+    this.bugs = this.bugs.filter(bug => !bug.isClosed);
   }
 
   /* TOBE : Fixed  */
