@@ -14,7 +14,9 @@ import { TrimTextPipe } from './bugs/pipes/trim-text.pipe';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    {provide : 'STORAGE', useValue : window.localStorage }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

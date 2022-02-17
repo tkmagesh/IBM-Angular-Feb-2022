@@ -16,7 +16,7 @@ export class BugsComponent implements OnInit {
   constructor(private bugOperations : BugOperationsService) { }
 
   ngOnInit(): void {
-    //load the bugs from the storage
+    this.bugs = this.bugOperations.getAll();
   }
 
   onAddNewClick(newBugName : string){
@@ -25,6 +25,7 @@ export class BugsComponent implements OnInit {
   }
 
   onRemoveClick(bugToRemove : Bug){
+    this.bugOperations.remove(bugToRemove);
     this.bugs.splice(this.bugs.indexOf(bugToRemove), 1)
   }
 
@@ -50,7 +51,13 @@ export class BugsComponent implements OnInit {
     }); 
     */
 
-    this.bugs = this.bugs.filter(bug => !bug.isClosed);
+    //this.bugs = this.bugs.filter(bug => !bug.isClosed);
+    this.bugs
+      .filter(bug => bug.isClosed)
+      .forEach((closedBug,idx) => {
+        this.bugOperations.remove(closedBug);
+        this.bugs.splice(idx, 1)
+      })
 
   }
 
