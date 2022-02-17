@@ -9,6 +9,8 @@ import { BugOperationsService } from './services/bugOperations.service';
 })
 export class BugsComponent implements OnInit {
 
+  counter : number = 0;
+
   bugs : Bug[] = [];
 
   bugSortAttr : string = '';
@@ -22,16 +24,22 @@ export class BugsComponent implements OnInit {
 
   onAddNewClick(newBugName : string){
     const newBug = this.bugOperations.createNew(newBugName);
-    this.bugs.push(newBug);
+    
+    //mutation
+    //this.bugs.push(newBug);
+
+    //immutable
+    this.bugs = [...this.bugs, newBug];
   }
 
   onRemoveClick(bugToRemove : Bug){
     this.bugOperations.remove(bugToRemove);
-    this.bugs.splice(this.bugs.indexOf(bugToRemove), 1)
+    this.bugs = this.bugs.filter(bug => bug.id !== bugToRemove.id)
   }
 
   onBugNameClick(bugToToggle : Bug){
-    this.bugOperations.toggle(bugToToggle);
+    const toggledBug = this.bugOperations.toggle(bugToToggle);
+    this.bugs = this.bugs.map(bug => bug.id === bugToToggle.id ? toggledBug : bug);
   }
 
   onRemoveClosedClick(){
@@ -55,28 +63,11 @@ export class BugsComponent implements OnInit {
     
     this.bugs
       .filter(bug => bug.isClosed)
-      .forEach((closedBug,idx) => {
+      .forEach((closedBug) => {
         this.bugOperations.remove(closedBug);
       })
     this.bugs = this.bugs.filter(bug => !bug.isClosed);
   }
 
-  /* TOBE : Fixed  */
-  getClosedCount() : number {
-    /* Approach-1 */
-    /* 
-    let closedCount = 0;
-    for (let bug of this.bugs){
-      if (bug.isClosed)
-        ++closedCount
-    }
-    return closedCount 
-    */
-
-    /* Approach-2 */
-    /* return this.bugs.filter(bug => bug.isClosed).length */
-    
-    /* Approach-3 */
-    return this.bugs.reduce((result, bug) => bug.isClosed ? result + 1 : result, 0)
-  }
+ 
 }

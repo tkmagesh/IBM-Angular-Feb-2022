@@ -1,5 +1,9 @@
+<div>
+    <button (click)="counter = counter + 1">Increment</button>
+    <div>{{counter}}</div>
+</div>
 <section class="stats">
-    <span class="closed">{{getClosedCount()}}</span>
+    <span class="closed">{{bugs | closedCount}}</span>
     <span> / </span>
     <span>{{bugs.length}}</span>
 </section>

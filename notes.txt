@@ -208,3 +208,14 @@ to use moment.js
     npm install moment
     import * as moment from 'moment'
     moment('2022-02-17T05:48:34.496Z').fromNow()
+
+Pure Functions
+    A function with no side effects
+    If the invocation of the function can be replaced with the result of invocation without affecting the final outcome
+
+    If a function depends ONLY on the given input & doesnt communicate to other resources (db, console, http, fs etc)
+        then it is a pure function
+
+    Adv:
+        memoization
+            ability to remember and reuse the result of a function
