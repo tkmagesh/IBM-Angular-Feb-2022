@@ -1,13 +1,13 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-type Comparer = (x : T, y : T ) => number
+type Comparer<T> = (x : T, y : T ) => number
 
 @Pipe({
     name : 'sort'
 })
 export class SortPipe<T> implements PipeTransform{
 
-    private getComparer(attrName : keyof(T)) : Comparer {
+    private getComparer(attrName : keyof(T)) : Comparer<T> {
         return (x : T, y : T ) : number => {
             if (x[attrName] < y[attrName]) return -1;
             if (x[attrName] > y[attrName]) return 1;
