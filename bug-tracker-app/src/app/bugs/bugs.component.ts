@@ -11,6 +11,7 @@ export class BugsComponent implements OnInit {
 
   bugs : Bug[] = [];
 
+  bugSortAttr : string = '';
   
 
   constructor(private bugOperations : BugOperationsService) { }

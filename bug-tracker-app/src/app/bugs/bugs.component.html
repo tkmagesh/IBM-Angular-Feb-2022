@@ -5,7 +5,7 @@
 </section>
 <section class="sort">
     <label for="">Order By :</label>
-    <select name="" id="">
+    <select (change)="bugSortAttr = $any($event.target).value">
         <option value="">---Select---</option>
         <option value="name">Name</option>
         <option value="isClosed">Status</option>
@@ -21,7 +21,7 @@
 </section>
 <section class="list">
     <ol>
-        <li *ngFor="let bug of bugs">
+        <li *ngFor="let bug of (bugs|sort:bugSortAttr) ">
             <span 
                 class="bugname"
                 (click)="onBugNameClick(bug)"
