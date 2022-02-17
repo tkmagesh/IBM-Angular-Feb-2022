@@ -203,3 +203,8 @@ To Study
         - map()
         - reduce()
         - forEach()
+
+to use moment.js
+    npm install moment
+    import * as moment from 'moment'
+    moment('2022-02-17T05:48:34.496Z').fromNow()
