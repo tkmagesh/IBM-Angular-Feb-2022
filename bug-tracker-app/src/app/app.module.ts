@@ -7,6 +7,7 @@ import { ClosedCountPipe } from './bugs/pipes/closedCount.pipe';
 import { ElapsedPipe } from './bugs/pipes/elapsed.pipe';
 import { SortPipe } from './bugs/pipes/sort.pipe';
 import { TrimTextPipe } from './bugs/pipes/trim-text.pipe';
+import { BugStatsComponent } from './bugs/views/bugStats.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TrimTextPipe } from './bugs/pipes/trim-text.pipe';
     TrimTextPipe,
     ElapsedPipe,
     SortPipe,
-    ClosedCountPipe
+    ClosedCountPipe,
+    BugStatsComponent
   ],
   imports: [
     BrowserModule

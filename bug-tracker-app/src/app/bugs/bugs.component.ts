@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Bug } from './models/bug';
 import { BugOperationsService } from './services/bugOperations.service';
 
 @Component({
   selector: 'app-bugs',
   templateUrl: './bugs.component.html',
-  styleUrls: ['./bugs.component.css']
+  styleUrls: ['./bugs.component.css'],
+  encapsulation : ViewEncapsulation.None
 })
 export class BugsComponent implements OnInit {
 

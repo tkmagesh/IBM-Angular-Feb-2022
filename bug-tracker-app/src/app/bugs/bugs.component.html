@@ -1,12 +1,4 @@
-<div>
-    <button (click)="counter = counter + 1">Increment</button>
-    <div>{{counter}}</div>
-</div>
-<section class="stats">
-    <span class="closed">{{bugs | closedCount}}</span>
-    <span> / </span>
-    <span>{{bugs.length}}</span>
-</section>
+<app-bug-stats [data]="bugs"></app-bug-stats>
 <section class="sort">
     <label for="">Order By :</label>
     <select (change)="bugSortAttr = $any($event.target).value">
