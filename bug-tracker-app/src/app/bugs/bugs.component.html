@@ -1,4 +1,4 @@
-<app-bug-stats [data]="bugs"></app-bug-stats>
+<app-bug-stats [data]="bugOperations.bugs"></app-bug-stats>
 <section class="sort">
     <label for="">Order By :</label>
     <select (change)="bugSortAttr = $any($event.target).value">
@@ -10,10 +10,10 @@
     <label for="">Descending ? :</label>
     <input type="checkbox" (change)="bugSortDesc = $any($event.target).checked">
 </section>
-<app-bug-edit (bugAdded)="onNewBugCreated($event)"></app-bug-edit>
+<app-bug-edit></app-bug-edit>
 <section class="list">
     <ol>
-        <li *ngFor="let bug of (bugs|sort:bugSortAttr:bugSortDesc) ">
+        <li *ngFor="let bug of (bugOperations.bugs|sort:bugSortAttr:bugSortDesc) ">
             <span 
                 class="bugname"
                 (click)="onBugNameClick(bug)"

@@ -10,31 +10,54 @@ import { BugApiService } from "./bugApi.service";
 })
 export class BugOperationsService{
     //using bugApi service
+
+    bugs : Bug[] = [];
+
     constructor(private bugApi : BugApiService){
 
     }
-    createNew(newBugName : string) : Observable<Bug> {
+    createNew(newBugName : string) {
         const newBug : Bug = {
             id : 0,
             name : newBugName,
             isClosed : false,
             createdAt : new Date()
         }
-        return this.bugApi.save(newBug);
+        this.bugApi
+            .save(newBug)
+            .subscribe(newBug => this.bugs = [...this.bugs, newBug])
     }
 
-    toggle(bugToToggle : Bug) : Observable<Bug> {
+    toggle(bugToToggle : Bug) {
         const toggledBug = { ...bugToToggle, isClosed : !bugToToggle.isClosed}
-        return this.bugApi.save(toggledBug);
+        this.bugApi
+            .save(toggledBug)
+            .subscribe(toggledBug => {
+                this.bugs = this.bugs.map(bug => bug.id === toggledBug.id ? toggledBug : bug);
+            })
     }
 
-    remove(bugToRemove : Bug) : Observable<void>{
-        return this.bugApi.remove(bugToRemove)
+    remove(bugToRemove : Bug){
+        this.bugApi
+            .remove(bugToRemove)
+            .subscribe(() => {
+                this.bugs = this.bugs.filter(bug => bug.id !== bugToRemove.id)
+            })
     }
 
-    getAll() : Observable<Bug[]> {
+    getAll()  {
         //return this.bugApi.getAll();
-        return this.bugApi.getAllOpen()
+        this.bugApi
+            .getAll()
+            .subscribe(bugs => this.bugs = bugs);
+    }
+
+    removeClosed(){
+        this.bugs
+        .filter(bug => bug.isClosed)
+        .forEach((closedBug) => {
+            this.remove(closedBug);
+        })
     }
 
     //using bugStorage Service
