@@ -11,13 +11,17 @@ import { BugStatsComponent } from './bugs/views/bugStats.component';
 import { UtilsModule } from './utils/utils.module';
 import { BugDetailsComponent } from './bugs/views/bug-details.component';
 import { NotFoundComponent } from './not-found.component';
+import { LoggedInGuard } from './auth/loggedInGuard';
+import { LoginComponent } from './auth/login.component';
 
 let routes : Routes = [
   {path : '', redirectTo:'/bugs', pathMatch:'full'},
-  {path : 'bugs', component : BugsComponent },
+  {path : 'bugs', component : BugsComponent, canActivate : [LoggedInGuard] },
   {path : 'add', component : BugEditComponent},
   {path : 'details/:id', component : BugDetailsComponent},
+  {path : 'login', component : LoginComponent},
   {path : '**', component : NotFoundComponent}
+
 ]
 
 @NgModule({

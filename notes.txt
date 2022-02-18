@@ -335,5 +335,5 @@ angular 4, router 4
 
 localhost:4200 => bugsComponent
 localhost:4200/bugs => bugsComponent
-localhost:4200/create => newBugComponent
-localhost:4200/bug/<id> => bugInfoComponent
+localhost:4200/create => bugEditComponent
+localhost:4200/bug/<id> => bugDetailsComponent
