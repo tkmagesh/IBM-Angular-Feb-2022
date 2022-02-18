@@ -310,3 +310,30 @@ Server Communication in Angular
         Delete a bug
             const deletedBug$ = this.http.delete<void>('http://localhost:3000/bugs/<id>');
             deletedBug$.subscribe(_ => console.log('done'));
+
+Routing
+    https://www.amazon.in
+    https://www.amazon.in/electronics
+    https://www.amazon.in/electronics/mobile
+    https://www.amazon.in/electronics/mobile/google
+    https://www.amazon.in/electronics/mobile/google/pixel-6
+
+    https://www.amazon.in/electronics/mobile/google/pixel-6/reviews
+
+    Outlook
+    Outlook/Inbox
+    Outlook/Inbox/Projects
+    Outlook/Inbox/Projects/Eclipse
+    Outlook/Inbox/Projects/Eclipse/bugs
+
+    Outlook/Inbox/Projects/Eclipse/bugs/bug-101
+
+
+angular 1, router 2
+angular 2, router 3
+angular 4, router 4
+
+localhost:4200 => bugsComponent
+localhost:4200/bugs => bugsComponent
+localhost:4200/create => newBugComponent
+localhost:4200/bug/<id> => bugInfoComponent

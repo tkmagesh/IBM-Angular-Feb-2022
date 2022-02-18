@@ -60,6 +60,11 @@ export class BugOperationsService{
         })
     }
 
+    getById(id : number) : Observable<Bug> {
+        return this.bugApi
+            .getById(id)
+    }
+
     //using bugStorage Service
     /* constructor(private bugStorage : BugStorageService){
 

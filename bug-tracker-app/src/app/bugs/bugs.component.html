@@ -1,3 +1,6 @@
+<div>
+    <a [routerLink]="['/add']">Create New</a>
+</div>
 <app-bug-stats [data]="bugOperations.bugs"></app-bug-stats>
 <section class="sort">
     <label for="">Order By :</label>
@@ -10,7 +13,6 @@
     <label for="">Descending ? :</label>
     <input type="checkbox" (change)="bugSortDesc = $any($event.target).checked">
 </section>
-<app-bug-edit></app-bug-edit>
 <section class="list">
     <ol>
         <li *ngFor="let bug of (bugOperations.bugs|sort:bugSortAttr:bugSortDesc) ">
@@ -23,6 +25,9 @@
             </span>
             <div class="datetime">{{bug.createdAt | elapsed }}</div>
             <button (click)="onRemoveClick(bug)">Remove</button>
+            <div>
+                <a [routerLink]="['/details', bug.id]">More...</a>
+            </div>
         </li>
     </ol>
     <button (click)="onRemoveClosedClick()">Remove Closed</button>
