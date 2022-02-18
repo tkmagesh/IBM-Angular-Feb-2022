@@ -50,12 +50,26 @@
 
     window['adddAsyncPromise'] = adddAsyncPromise;
 
+    function addSyncClient(x,y){
+        console.log(`[@client] invoking the service`)
+        const result = addSync(x,y);
+        console.log(`[@client] result = ${result}`)
+    }
+
+   /* 
     function addAsyncPromiseClient(x,y){
         console.log(`[@client] invoking service`);
         var p = adddAsyncPromise(100,200);
         p.then(function(result){
             console.log(`[@client] result = ${result}`);
         });
+    } 
+    */
+
+    async function addAsyncPromiseClient(x,y){
+        console.log(`[@client] invoking service`);
+        var result = await adddAsyncPromise(100,200);
+        console.log(`[@client] result = ${result}`);
     }
 
     window['addAsyncPromiseClient'] = addAsyncPromiseClient;
@@ -65,3 +79,17 @@
             - catch(fn)
     */
 })();
+
+function divideAsyncPromise(x,y){
+    console.log(`   [@service] processing ${x} and ${y}`)
+    var p = new Promise(function(resolveFn, rejectFn){
+        setTimeout(function(){
+            if (y === 0)
+                return rejectFn(new Error('Cannot divide by zero'))
+            const result = x / y;
+            console.log(`   [@service] returning result`);
+            resolveFn(result);
+        },5000);
+    });
+    return p;
+}

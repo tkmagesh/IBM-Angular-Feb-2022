@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Bug } from './models/bug';
 import { BugOperationsService } from './services/bugOperations.service';
@@ -17,10 +18,15 @@ export class BugsComponent implements OnInit {
   bugSortAttr : string = '';
   bugSortDesc : boolean = false;
 
-  constructor(private bugOperations : BugOperationsService) { }
+  constructor(
+    private bugOperations : BugOperationsService,
+    private http : HttpClient) {
+
+     }
 
   ngOnInit(): void {
     this.bugs = this.bugOperations.getAll();
+    
   }
 
   onNewBugCreated(newBug : Bug){

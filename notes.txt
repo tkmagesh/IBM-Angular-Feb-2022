@@ -232,3 +232,81 @@ Server Communication
         Client will not wait for the operation to complete
 
         1. Using Callbacks
+        2. Using promises
+        3. Using Async Await
+
+Observable
+    Inverse of Enumberable (lazy evaluation)
+
+
+Observable = collection that will get the data in "future"
+    STREAM OF EVENTS
+
+Event Driven Applications
+    The sequence of execution is determined by "external" events
+
+employee.dat
+    id,name,doj,dob,salary,city
+
+Write a program to calculate the average salary of the employees
+
+    open the file
+
+    while !eof{
+        read the line
+        split the line
+        parse the line
+        sum = sum + salary
+        count = count + 1
+    }
+
+    avg = sum / count
+
+    close file
+
+    return avg
+
+Mouse is the database
+
+
+Rx.NET
+
+Sources of Async Operations
+    1. User Events (stream)
+    2. Timers (setInterval) (stream)
+    3. Ajax (singular)
+    4. Server sent events (stream)
+    5. Web sockets (stream)
+
+
+Server Communication in Angular
+    Module -> HttpClientModule from @angular/common/http 
+    Service -> HttpClient
+
+
+    HTTP Operations
+        Get all bugs
+            const bugs$ = this.http.get<Bug[]>('http://localhost:3000/bugs');
+            bugs$.subscribe(bugs => console.table(bugs));
+
+        Get One bug by id
+            const bug$ = this.http.get<Bug>('http://localhost:3000/bugs/<id>');
+            bugs$.subscribe(bug => console.log(bug));
+
+        Create a new bug
+            const newBug$ = this.http.post<Bug>('http://localhost:3000/bugs', {
+                name: 'New Bug',
+                isClosed: false
+            });
+            newBug$.subscribe(bug => console.log(bug));
+
+        Update a bug
+            const updatedBug$ = this.http.put<Bug>('http://localhost:3000/bugs/<id>', {
+                name: 'Updated Bug',
+                isClosed: true
+            });
+            updatedBug$.subscribe(bug => console.log(bug));
+
+        Delete a bug
+            const deletedBug$ = this.http.delete<void>('http://localhost:3000/bugs/<id>');
+            deletedBug$.subscribe(_ => console.log('done'));

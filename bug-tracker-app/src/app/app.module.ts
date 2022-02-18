@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BugsComponent } from './bugs/bugs.component';
@@ -18,7 +19,8 @@ import { UtilsModule } from './utils/utils.module';
   ],
   imports: [
     BrowserModule,
-    UtilsModule
+    UtilsModule,
+    HttpClientModule
   ],
   providers: [
     {provide : 'STORAGE', useValue : window.localStorage }
