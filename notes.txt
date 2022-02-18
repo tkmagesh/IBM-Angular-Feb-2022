@@ -337,3 +337,5 @@ localhost:4200 => bugsComponent
 localhost:4200/bugs => bugsComponent
 localhost:4200/create => bugEditComponent
 localhost:4200/bug/<id> => bugDetailsComponent
+
+
