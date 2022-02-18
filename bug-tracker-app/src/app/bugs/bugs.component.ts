@@ -19,13 +19,15 @@ export class BugsComponent implements OnInit {
   bugSortDesc : boolean = false;
 
   constructor(
-    private bugOperations : BugOperationsService,
-    private http : HttpClient) {
+    private bugOperations : BugOperationsService) {
 
      }
 
   ngOnInit(): void {
-    this.bugs = this.bugOperations.getAll();
+    this
+      .bugOperations
+      .getAll()
+      .subscribe(bugs => this.bugs = bugs);
     
   }
 
@@ -34,40 +36,30 @@ export class BugsComponent implements OnInit {
   }
 
   onRemoveClick(bugToRemove : Bug){
-    this.bugOperations.remove(bugToRemove);
-    this.bugs = this.bugs.filter(bug => bug.id !== bugToRemove.id)
+    this
+      .bugOperations
+      .remove(bugToRemove)
+      .subscribe(() => {
+        this.bugs = this.bugs.filter(bug => bug.id !== bugToRemove.id)
+      })
+    
   }
 
   onBugNameClick(bugToToggle : Bug){
-    const toggledBug = this.bugOperations.toggle(bugToToggle);
-    this.bugs = this.bugs.map(bug => bug.id === bugToToggle.id ? toggledBug : bug);
+    this.bugOperations
+      .toggle(bugToToggle)
+      .subscribe(toggledBug => {
+        this.bugs = this.bugs.map(bug => bug.id === bugToToggle.id ? toggledBug : bug);
+      });
+    
   }
 
   onRemoveClosedClick(){
-    /* approach-1 */
-    /* 
-    for (let idx = this.bugs.length-1; idx >=0; idx--){
-      let bug = this.bugs[idx];
-      if (bug.isClosed){
-        this.bugs.splice(idx, 1)
-      }
-    } 
-    */
-
-    /* approach-2 */
-    /* 
-    this.bugs = this.bugs.filter(function(bug){
-      return !bug.isClosed;
-    }); 
-    */
-
-    
     this.bugs
       .filter(bug => bug.isClosed)
       .forEach((closedBug) => {
-        this.bugOperations.remove(closedBug);
+        this.onRemoveClick(closedBug);
       })
-    this.bugs = this.bugs.filter(bug => !bug.isClosed);
   }
 
  

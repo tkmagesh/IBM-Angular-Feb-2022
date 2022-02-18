@@ -1,28 +1,16 @@
 {
   "bugs": [
     {
-      "id": 2,
-      "name": "Server communication failure",
-      "createdAt": "2020-11-26T11:17:31.342Z",
-      "isClosed": false
-    },
-    {
       "id": 3,
       "name": "User actions not recognised",
       "isClosed": false,
       "createdAt": "2021-09-16T12:52:46.704Z"
     },
     {
-      "id": 4,
-      "name": "Data integrity checks failed",
-      "isClosed": false,
-      "createdAt": "2022-01-07T04:57:11.810Z"
-    },
-    {
-      "id": 5,
-      "name": "Router is not routing",
-      "isClosed": false,
-      "createdAt": "2022-01-07T09:17:49.008Z"
+      "id": 6,
+      "name": "Application not responding",
+      "isClosed": true,
+      "createdAt": "2022-02-18T09:16:15.098Z"
     }
   ],
   "projects": [

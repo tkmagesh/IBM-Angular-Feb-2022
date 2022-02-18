@@ -26,7 +26,10 @@ export class BugEditComponent implements OnInit{
     }
 
     onAddNewClick(newBugName : string){
-        const newBug = this.bugOperations.createNew(newBugName);
-        this.bugAdded.emit(newBug);
+        this.bugOperations
+            .createNew(newBugName)
+            .subscribe(newBug => {
+                this.bugAdded.emit(newBug);
+            })
     }
 }
