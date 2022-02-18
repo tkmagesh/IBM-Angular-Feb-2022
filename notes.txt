@@ -219,3 +219,14 @@ Pure Functions
     Adv:
         memoization
             ability to remember and reuse the result of a function
+
+Server Communication
+    Server?
+        json-server
+
+    Communication
+        Asynchronous
+
+    Asynchronous Operation
+        Will complete sometime in future
+        Client will not wait for the operation to complete
